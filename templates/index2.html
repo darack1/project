@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUMINA SIGNS — Премиальные световые вывески</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-orbitron { font-family: 'Orbitron', sans-serif; }
+
+        .neon-text {
+            text-shadow: 0 0 20px #a855f7, 0 0 40px #c026d3, 0 0 80px #ec4899;
+        }
+
+        .service-card {
+            background: rgba(15, 23, 42, 0.92);
+            border: 1px solid rgba(168, 85, 247, 0.4);
+            transition: all 0.4s ease;
+            backdrop-filter: blur(12px);
+        }
+
+        .service-card:hover {
+            border-color: #c026d3;
+            transform: translateY(-8px);
+            box-shadow: 0 0 40px rgba(168, 85, 247, 0.7), 0 0 80px rgba(236, 72, 153, 0.5);
+        }
+
+        .glow-title {
+            text-shadow: 0 0 30px #a855f7;
+        }
+
+        /* Анимация появления */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.7s ease;
+        }
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Улучшения для мобильных */
+        @media (max-width: 640px) {
+            .hero-title {
+                font-size: 3.2rem;
+                line-height: 1.1;
+            }
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-white overflow-x-hidden">
+
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/90 backdrop-blur-lg border-b border-white/10">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-gradient-to-br from-violet-500 to-fuchsia-500 rounded-2xl flex items-center justify-center font-bold text-lg">L</div>
+                <span class="font-orbitron text-2xl tracking-tighter font-bold neon-text">LUMINA</span>
+            </div>
+
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#services" class="hover:text-violet-400 transition-colors">Услуги</a>
+                <a href="#portfolio" class="hover:text-violet-400 transition-colors">Работы</a>
+                <a href="#calculator" class="hover:text-violet-400 transition-colors">Калькулятор</a>
+                <a href="#contact" class="hover:text-violet-400 transition-colors">Контакты</a>
+            </div>
+
+            <button id="mobile-menu-button" class="md:hidden text-3xl">☰</button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="fixed top-0 right-0 h-screen w-72 bg-zinc-900 border-l border-violet-500/30 p-8 pt-24 z-40 translate-x-full transition-transform duration-300">
+            <div class="flex flex-col gap-6 text-xl font-medium">
+                <a href="#services" class="mobile-link py-2">Наши услуги</a>
+                <a href="#portfolio" class="mobile-link py-2">Наши работы</a>
+                <a href="#calculator" class="mobile-link py-2">Калькулятор стоимости</a>
+                <a href="#contact" class="mobile-link py-2">Контакты</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="relative min-h-screen flex items-center justify-center">
+        <div class="absolute inset-0 bg-gradient-to-br from-purple-950 via-zinc-950 to-black"></div>
+
+        <div class="container mx-auto px-4 text-center relative z-10 pt-16">
+            <h1 class="hero-title text-5xl sm:text-6xl md:text-7xl font-black font-orbitron tracking-[-2px] neon-text glow-pulse mb-6 leading-none">
+                LUMINA<br>SIGNS
+            </h1>
+            <p class="text-xl sm:text-2xl md:text-3xl text-violet-300 mb-10 px-4">
+                Свет, который продаёт ваш бизнес
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center px-4">
+                <a href="#services"
+                   class="px-8 py-5 bg-gradient-to-r from-violet-600 to-fuchsia-600 rounded-3xl font-semibold text-base sm:text-lg hover:scale-105 transition-all">
+                    Наши услуги
+                </a>
+                <a href="#calculator"
+                   class="px-8 py-5 border-2 border-white/60 hover:border-white rounded-3xl font-semibold text-base sm:text-lg transition-all">
+                    Рассчитать стоимость
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- НАШИ УСЛУГИ -->
+<section id="services" class="py-20 md:py-28 bg-zinc-950">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl md:text-5xl font-bold font-orbitron text-center mb-12 md:mb-20 glow-title">
+            Наши услуги
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
+
+            <!-- 1. Объёмные буквы -->
+            <div class="service-card rounded-3xl overflow-hidden animate-on-scroll">
+                <div class="h-48 bg-zinc-800 relative">
+                    <img src="static/Image/restor.jpg"
+                         alt="Объёмные буквы"
+                         class="w-full h-full object-cover">
+                    <div class="absolute top-4 right-4 bg-black/70 text-white text-xs px-3 py-1 rounded-full">
+                        3D буквы
+                    </div>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-2xl font-semibold mb-3">Объёмные буквы</h3>
+                    <p class="text-gray-400">3D-буквы из акрила, металла и композита с внутренней, контурной и фронтальной подсветкой</p>
+                </div>
+            </div>
+
+            <!-- 2. Световые короба -->
+            <div class="service-card rounded-3xl overflow-hidden animate-on-scroll">
+                <div class="h-48 bg-zinc-800 relative">
+                    <img src="https://picsum.photos/id/201/600/400"
+                         alt="Световые короба"
+                         class="w-full h-full object-cover">
+                </div>
+                <div class="p-8">
+                    <h3 class="text-2xl font-semibold mb-3">Световые короба</h3>
+                    <p class="text-gray-400">Современные световые панели и короба любой сложности и размера</p>
+                </div>
+            </div>
+
+            <!-- 3. Неоновые вывески -->
+            <div class="service-card rounded-3xl overflow-hidden animate-on-scroll">
+                <div class="h-48 bg-zinc-800 relative">
+                    <img src="https://picsum.photos/id/237/600/400"
+                         alt="Неоновые вывески"
+                         class="w-full h-full object-cover">
+                </div>
+                <div class="p-8">
+                    <h3 class="text-2xl font-semibold mb-3">Неоновые вывески</h3>
+                    <p class="text-gray-400">Гибкий LED-неон, RGB-неон и классический неон</p>
+                </div>
+            </div>
+
+            <!-- 4. Фасадные вывески -->
+            <div class="service-card rounded-3xl overflow-hidden animate-on-scroll">
+                <div class="h-48 bg-zinc-800 relative">
+                    <img src="https://picsum.photos/id/1016/600/400"
+                         alt="Фасадные вывески"
+                         class="w-full h-full object-cover">
+                </div>
+                <div class="p-8">
+                    <h3 class="text-2xl font-semibold mb-3">Фасадные вывески</h3>
+                    <p class="text-gray-400">Композитные панели, крупноформатные конструкции и брендирование фасадов</p>
+                </div>
+            </div>
+
+            <!-- 5. Интерьерные таблички -->
+            <div class="service-card rounded-3xl overflow-hidden animate-on-scroll">
+                <div class="h-48 bg-zinc-800 relative">
+                    <img src="https://picsum.photos/id/133/600/400"
+                         alt="Интерьерные таблички"
+                         class="w-full h-full object-cover">
+                </div>
+                <div class="p-8">
+                    <h3 class="text-2xl font-semibold mb-3">Интерьерные таблички</h3>
+                    <p class="text-gray-400">Офисные таблички, навигация и акриловые указатели</p>
+                </div>
+            </div>
+
+            <!-- 6. Рекламные конструкции -->
+            <div class="service-card rounded-3xl overflow-hidden animate-on-scroll">
+                <div class="h-48 bg-zinc-800 relative">
+                    <img src="https://picsum.photos/id/180/600/400"
+                         alt="Рекламные конструкции"
+                         class="w-full h-full object-cover">
+                </div>
+                <div class="p-8">
+                    <h3 class="text-2xl font-semibold mb-3">Рекламные конструкции</h3>
+                    <p class="text-gray-400">Штендеры, стелы, пилоны, тотемы и другие носители</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <!-- ГАЛЕРЕЯ -->
+    <section id="portfolio" class="py-20 bg-black">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold font-orbitron text-center mb-12">Наши работы</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="rounded-3xl overflow-hidden">
+                    <img src="https://picsum.photos/id/1015/600/400" class="w-full h-64 sm:h-80 object-cover hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="rounded-3xl overflow-hidden">
+                    <img src="https://picsum.photos/id/201/600/400" class="w-full h-64 sm:h-80 object-cover hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="rounded-3xl overflow-hidden">
+                    <img src="https://picsum.photos/id/237/600/400" class="w-full h-64 sm:h-80 object-cover hover:scale-110 transition-transform duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- КАЛЬКУЛЯТОР -->
+    <section id="calculator" class="py-20 bg-zinc-950">
+        <div class="container mx-auto px-4 max-w-xl">
+            <h2 class="text-4xl md:text-5xl font-bold font-orbitron text-center mb-10">Рассчитать стоимость</h2>
+            <div class="bg-zinc-900 rounded-3xl p-8 md:p-10">
+                <div class="space-y-8">
+                    <div>
+                        <label class="block text-gray-400 mb-3 text-sm">Тип изделия</label>
+                        <select id="type" class="w-full bg-zinc-800 p-4 rounded-2xl text-base">
+                            <option value="250">Объёмные буквы</option>
+                            <option value="250">Световой короб</option>
+                            <option value="250">Неоновая вывеска</option>
+                            <option value="250">Фасадная конструкция</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-gray-400 mb-3 text-sm">Ширина (метры)</label>
+                        <input type="range" id="width" min="0.5" max="10" step="0.1" value="3" class="w-full accent-violet-500">
+                        <div class="flex justify-between mt-3 text-sm">
+                            <span>0.5 м</span>
+                            <span id="width-value" class="font-semibold">3.0 м</span>
+                            <span>10 м</span>
+                        </div>
+                    </div>
+                    <div class="pt-8 border-t border-gray-700 text-center">
+                        <span class="text-gray-400">Примерная стоимость</span>
+                        <div id="price" class="text-4xl md:text-5xl font-bold text-violet-400 mt-2">1 050 BYN</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- КОНТАКТЫ -->
+    <section id="contact" class="py-20 bg-black">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold font-orbitron mb-6">Свяжитесь с нами</h2>
+            <p class="text-lg text-gray-400 mb-10">Работаем ежедневно с 9:00 до 21:00</p>
+
+            <div class="bg-zinc-900 rounded-3xl p-10 md:p-12 max-w-md mx-auto">
+                <div class="text-6xl mb-6">📞</div>
+                <a href="tel:+375295853285" class="block text-4xl md:text-5xl font-bold text-violet-400 hover:text-violet-300 transition-colors">
+                    +375 (29) 585-32-67
+                </a>
+                <p class="mt-4 text-gray-400">Звоните или пишите в Telegram</p>
+            </div>
+
+            <div class="mt-10 text-gray-400">
+                <a href="mailto:info@lumina-signs.ru" class="hover:text-violet-300 transition-colors">
+                    info@lumina-signs.ru
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-zinc-950 py-10 text-center text-gray-500 text-sm">
+        <p>© 2026 LUMINA SIGNS — Премиальные световые вывески и объёмные буквы</p>
+    </footer>
+
+    <script>
+        // Мобильное меню
+        const mobileBtn = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('translate-x-full');
+            mobileBtn.textContent = mobileMenu.classList.contains('translate-x-full') ? '☰' : '✕';
+        });
+
+        // Анимация при скролле
+        function animateOnScroll() {
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight * 0.85) {
+                    el.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+
+        // Калькулятор (для белорусских рублей)
+        const typeSelect = document.getElementById('type');
+        const widthSlider = document.getElementById('width');
+        const widthValue = document.getElementById('width-value');
+        const priceEl = document.getElementById('price');
+
+        function updatePrice() {
+            const base = parseFloat(typeSelect.value);     // теперь в сотнях BYN
+            const width = parseFloat(widthSlider.value);
+            const total = Math.round(base * width );  // умножаем на 100, чтобы было красиво
+
+            widthValue.textContent = width.toFixed(1) + " м";
+            priceEl.textContent = total.toLocaleString('ru-RU') + " BYN";
+        }
+
+        typeSelect.addEventListener('change', updatePrice);
+        widthSlider.addEventListener('input', updatePrice);
+        updatePrice();   // запуск при загрузке
+    </script>
+</body>
+</html>

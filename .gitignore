@@ -1,3 +1,33 @@
+# Virtual Environment
 .venv/
+venv/
+env/
+ENV/
+
+# Python cache
 __pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment variables
 .env
+.env.local
+
+# Flask specific
+instance/
+.webassets-cache
+
+# Static files (если вдруг)
+static/.DS_Store
+
+# PyCharm / IDE
+.idea/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
